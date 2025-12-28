@@ -21,3 +21,4 @@ area_age_bedroom_str = input('batao (enter area,age,bedroom separated by commas,
 features = [int(x.strip()) for x in area_age_bedroom_str.split(',')]
 prediction=model.predict([features])
 print('prediction output',prediction[[0]])
+
