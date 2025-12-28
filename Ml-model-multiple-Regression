@@ -1,0 +1,23 @@
+import numpy as np
+import pandas as pd
+from sklearn.linear_model import LinearRegression
+
+data= {
+  'area':(500,800,1200,1700,2100),
+    'age':(6,8,11,14,17),
+      'bedroom':(3,5,7,9,11),
+        'price':(50000,70000,90000,11000,13000)
+
+          }
+df=pd.DataFrame(data)
+print(df)
+
+model=LinearRegression()
+model.fit(df.drop('price',axis='columns'),df.price)
+
+print('Niteesh Pandey ')
+
+area_age_bedroom_str = input('batao (enter area,age,bedroom separated by commas, e.g., 400,3,2): ')
+features = [int(x.strip()) for x in area_age_bedroom_str.split(',')]
+prediction=model.predict([features])
+print('prediction output',prediction[[0]])
